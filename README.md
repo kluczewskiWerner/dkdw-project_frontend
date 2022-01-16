@@ -1,5 +1,23 @@
-# CurrencyConverter
+#Currency Converter v0.1.0
 
+The app allows the user to:
+
+convert a specified amount in PLN (Polish Zloty) to any another currency
+convert a specified amount in any currency to PLN (Polish Zloty)
+view the chart with currency rates actualized periodically
+manage the user's data.
+How to use the app:
+
+Sign up by filling the registration form.
+Log in to the app.
+To convert an amount in PLN to another currency, select the "from PLN" mode.
+To convert an amount in another currency to PLN, select the "to PLN" mode.
+Enter an amount.
+Click on the "Convert" button.
+To view the currency rates chart, click on the "show/hide table" button.
+To manage your data or delete your account, click on the "Edit uder data" button.
+
+# CurrencyConverter
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
 ## Development server
