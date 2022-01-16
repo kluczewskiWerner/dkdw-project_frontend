@@ -9,4 +9,6 @@ RUN npm run build --prod
 FROM nginx:alpine
 COPY --from=build /app/dist/currency-converter  /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
+CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+
