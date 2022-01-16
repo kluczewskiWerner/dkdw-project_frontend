@@ -47,54 +47,19 @@
                 <div class="alert-danger" *ngIf="f.submitted && lastName.invalid">
                   <div *ngIf="lastName.errors.required">Last name is required</div>
                 </div>
-              </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    [(ngModel)]="form.email"
-                    required
-                    email
-                    #email="ngModel"
-                  />
-                  <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-                    <div *ngIf="email.errors.required">Email is required</div>
-                    <div *ngIf="email.errors.email">
-                      Email must be a valid email address
-                    </div>
-                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    name="password"
-                    [(ngModel)]="form.password"
-                    required
-                    minlength="4"
-                    #password="ngModel"
-                  />
-                  <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-                    <div *ngIf="password.errors.required">Password is required</div>
-                    <div *ngIf="password.errors.minlength">
-                      Password must be at least 4 characters
-                    </div>
-                  </div>
+                  <button class="btn btn-primary btn-block">Edit data</button>
                 </div>
-                <div class="form-group">
-                  <button class="btn btn-primary btn-block">Sign Up</button>
-                </div>
+                <button id="showBtn" (click)="remove()" routerLink="" class="btn btn-primary">Remove account</button>
           
                 <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-                  Signup failed!<br />{{ errorMessage }}
+                  Edit failed!<br />{{ errorMessage }}
                 </div>
               </form>
           
               <div class="alert alert-success" *ngIf="isSuccessful">
-                Your registration is successful!
+                Your data is successfully updated!
               </div>
             </div>
           </div>

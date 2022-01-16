@@ -72,6 +72,9 @@ select {
         <p id="result" class="results"></p>
       </div>
       <button id="showBtn" (click)="showTable()" class="btn btn-primary">Show/Hide table</button>
+      <button class="btn btn-primary" routerLink="/edit">Edit user data</button>
+      <router-outlet></router-outlet>
+      <app-messages></app-messages>
       <div *ngIf="show">
         <table class="table">
           <thead>
