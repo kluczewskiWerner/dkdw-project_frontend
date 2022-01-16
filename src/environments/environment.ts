@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://dkdw-project-backend.herokuapp.com'
+  apiBaseUrl: 'http://localhost:8080'
 };
 
 /*
