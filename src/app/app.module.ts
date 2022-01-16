@@ -11,13 +11,15 @@ import { LoginComponent } from './login/login.component';
 import { ConverterComponent } from './converter/converter.component'
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { RegisterComponent } from './register/register.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ConverterComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

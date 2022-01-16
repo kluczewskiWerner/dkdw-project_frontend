@@ -41,6 +41,7 @@ select {
     <div class="panel panel-primary text-center">
       <div class="panel-heading">
         <h4 class="panel-title">Currency Converter</h4>
+        <h4 id="customerName" class="panel_title"></h4>
       </div>
       <div class="panel-body">
         <form #currencyForm="ngForm" (ngSubmit)="checkMode(currencyForm)" role="form" *ngFor="let allCurrency of allCurrency$" class="form-vertical">
@@ -72,6 +73,9 @@ select {
         <p id="result" class="results"></p>
       </div>
       <button id="showBtn" (click)="showTable()" class="btn btn-primary">Show/Hide table</button>
+      <button class="btn btn-primary" routerLink="/edit">Edit user data</button>
+      <router-outlet></router-outlet>
+      <app-messages></app-messages>
       <div *ngIf="show">
         <table class="table">
           <thead>

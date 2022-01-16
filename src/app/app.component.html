@@ -15,6 +15,7 @@
         <button *ngIf="!isLoggedIn" class="btn btn-primary btn-lg btn-block" href="/login" routerLink="login">Login</button>
         <button *ngIf="isLoggedIn" class="btn btn-primary btn-lg btn-block" href (click)="logout()">Log Out</button>
         <button *ngIf="!isLoggedIn" class="btn btn-primary btn-lg btn-block" href="/register" routerLink="register">Register</button>
+        <button *ngIf="isLoggedIn" class="btn btn-primary btn-lg btn-block" routerLink="/converter">Converter</button>
       </nav>
     
       <div class="container">

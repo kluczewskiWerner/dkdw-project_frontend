@@ -6,6 +6,8 @@ import { Currency } from './currency';
 import { CurrencyService } from './currency.service';
 import { Router } from '@angular/router';
 import { TokenStorageService } from '../_services/token-storage.service';
+import { EditService } from '../edit/editService';
+import { Customer } from '../edit/customer';
 
 @Component({
   selector: 'app-root-converter',
@@ -16,6 +18,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
 export class ConverterComponent implements OnInit {
   public allCurrency$: AllCurrency[];
   public currency$: Currency;
+  public customer$: Customer;
 
   public show: boolean = false;
   public showBtn: any = 'Show';
@@ -26,12 +29,14 @@ export class ConverterComponent implements OnInit {
 
   constructor(private currencyService: CurrencyService,
     private tokenStorage: TokenStorageService,
-    private router: Router) {}
+    private router: Router,
+    private editService: EditService) {}
 
   ngOnInit() {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.getAllCurrency();
+      this.getCustomerData();
     }
   }
 
@@ -53,6 +58,15 @@ export class ConverterComponent implements OnInit {
     } else {
       this.fromPln(currencyForm)
     }
+  }
+
+  public getCustomerData(): void {
+    this.editService.getUserData().subscribe(
+      (response: Customer) => {
+        this.customer$ = response;
+        document.getElementById('customerName').textContent = "Hello " + this.customer$.firstName + " " + this.customer$.lastName;
+      }
+    )
   }
 
   public getAllCurrency(): void {
